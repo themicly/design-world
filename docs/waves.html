@@ -1,22 +1,20 @@
 <title>Wave Example</title>
-<style>
+<style type="text/less">
 html,
 body {
   width: 100%;
   height: 100%;
 }
-
 body {
   background: #0A212E;
   margin: 0px;
   overflow: hidden;
   animation: color-loop 18s infinite;
 }
-
 .waves {
   position: relative;
   top: 50%;
-  background: rgba(255, 255, 255, .3);
+  background: rgba(255, 255, 255, 0.3);
   left: 50%;
   width: 25px;
   height: 25px;
@@ -25,7 +23,7 @@ body {
   border-radius: 50%;
   -webkit-backface-visibility: hidden;
 }
-.wave(){
+.waves:before {
   position: absolute;
   background: white;
   margin-left: -12px;
@@ -34,21 +32,24 @@ body {
   height: 50px;
   content: "";
   display: block;
-  boborder-radius: 50%;
+  border-radius: 50%;
   -webkit-backface-visibility: hidden;
-}
-
-.waves:before {
-  .wave();
   animation: wave-animate 3s infinite ease-out;
 }
-
 .waves:after {
-  .wave();
-  opacity:0;
+  position: absolute;
+  background: white;
+  margin-left: -12px;
+  margin-top: -12px;
+  width: 50px;
+  height: 50px;
+  content: "";
+  display: block;
+  border-radius: 50%;
+  -webkit-backface-visibility: hidden;
+  opacity: 0;
   animation: wave-animate 3s 1.5s infinite ease-out;
 }
-
 @keyframes wave-animate {
   0% {
     transform: scale(0);
@@ -61,7 +62,6 @@ body {
     transform-origin: center;
   }
 }
-
 @keyframes color-loop {
   0% {
     background: #2CAB5B;
@@ -78,8 +78,7 @@ body {
   100% {
     background: #2CAB5B;
   }
-  }
-  
+}
 </style>
 <div class="waves">
 </div>
